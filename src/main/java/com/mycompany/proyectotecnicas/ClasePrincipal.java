@@ -10,19 +10,27 @@ public class ClasePrincipal {
        
        while(true){
            
-        System.out.println("Seleccione una opción: \n");
-        System.out.println("2. Calcular cuadrado de los n primeros enteros.");
-        System.out.println("3. Retirar dinero. ");
+        System.out.println("\nSeleccione una opción: \n");
+        System.out.println("1. Tablas de multiplicar.");
+        System.out.println("2. Calcular cuadrados de los n primeros enteros.");
+        System.out.println("3. Calcular cubos de los n primeros enteros.");
+        System.out.println("4. Retirar dinero. ");
            
         var x = input.nextInt();
         
        
            switch (x) {
+               case 1:
+                   Punto1();
+                   break;
                case 2:
                    Punto2();
                    break;
                case 3:
                    Punto3();
+                   break;
+               case 4:
+                   Punto4();
                    break;
                default:
                    System.out.println("Por favor seleccione una opción válida.\n");
@@ -31,29 +39,87 @@ public class ClasePrincipal {
        
 }
     }
+       static void Punto1(){
+       
+        Scanner lector = new Scanner (System.in);
+        System.out.print("\nInserte el maximo numero a multiplicar:\n");
+        int n = lector.nextInt();
+        System.out.print("\nInserte hasta que numero se van a multiplicar:\n");
+        int m = lector.nextInt();
+        if (n*-1 < 0 && m*-1 < 0 )
+        {        
+        for (int sumador = 1; sumador <= n; sumador++)
+        {
+            System.out.print("Tabla del " + sumador + " hasta el " + m + "\n");
+            for (int multiplicador = 1; multiplicador <=m; multiplicador++)
+            {
+                int X=multiplicador*sumador;
+                System.out.print(X);
+                System.out.println("\n");
+            }
+        }
+        System.out.print("Exito\n");
+        }
+        else 
+        {
+            System.out.print("Ningún numero incresado debe ser negativo.");
+        }       
+       
+       }
+       
        static void Punto2(){
            
            Scanner input = new Scanner(System.in);
            System.out.println("Punto 2:\n");
            System.out.println("¿De cuántos enteros desea calcular el cuadrado?");
            var n = input.nextInt();
-           var cuadrado = 0;
+           int cuadrado = 0;
            int cont = 0;
+           int i;
        
-  
-           for(int i = 0; cont < n; i++){
-                if(i % 2 != 0){
+           if(n >= 0){
+           for(i = 1; cont < n; i = i+2){
+                
                     cuadrado = cuadrado + i;
                     cont++;
-                    System.out.println("El cuadrado de " + cont + " es " + cuadrado + ".");
-                      }
-                  } System.out.println("\n");
+                    System.out.println("El cuadrado de " + cont + " es = " + cuadrado + ".");
+                      
+           }} else{System.out.println("Por favor ingrese un entero positivo.");
+           }
+           System.out.println("\n");
           }
        
        static void Punto3(){
+           
+           Scanner sc = new Scanner(System.in);
+           int impar = -1;
+           System.out.println("Punto 3:");
+           System.out.println("Inserte el numero de cubos a calcular:");
+           int x = sc.nextInt();
+            if (x > 0){
+        for (int i = 1; i <= x; i++) 
+        {
+            impar = impar + 2;
+            int suma = impar;
+            for (int j = 2; j <= i; j++) 
+            {
+                impar = impar + 2;
+                suma = suma + impar;
+            }
+        System.out.println("El cubo de " + i + " es = " + suma + ".");
+        }
+        }
+    else 
+    {
+        System.out.println("Inserte un numero entero positivo.");
+    }
+           
+       }
+       
+       static void Punto4(){
        
            Scanner input = new Scanner(System.in);
-           System.out.println("Punto 3:\n");
+           System.out.println("Punto 4:\n");
            System.out.println("¿Cuánto dinero desea retirar?");
            
            var n = input.nextInt();
