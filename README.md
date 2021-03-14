@@ -1,4 +1,4 @@
-# reto2_Tecnicas
+# reto2Tecnicas
 
 Luis Fernando Zapata
 
