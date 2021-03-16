@@ -15,6 +15,7 @@ public class ClasePrincipal {
         System.out.println("2. Calcular cuadrados de los n primeros enteros.");
         System.out.println("3. Calcular cubos de los n primeros enteros.");
         System.out.println("4. Retirar dinero. ");
+        System.out.println("5. Ecuación con factoriales.");
            
         var x = input.nextInt();
         
@@ -32,6 +33,8 @@ public class ClasePrincipal {
                case 4:
                    Punto4();
                    break;
+               case 5:
+                   Punto5();
                default:
                    System.out.println("Por favor seleccione una opción válida.\n");
                    break;
@@ -211,7 +214,76 @@ public class ClasePrincipal {
            } else if(cien > 1){
                 System.out.println(cien + " monedas de 100 pesos.");
            }
+           
+           
           
+       }
+       
+       static void Punto5(){
+           
+           Scanner sc = new Scanner(System.in);
+            System.out.println("Realizar las combinaciones de M elementos tomados de N en N.");
+            System.out.println("Introduzca n: ");
+            
+            int n = sc.nextInt();
+            int factorial1 = 1;
+            if(n == 0)
+                {
+                    factorial1 = 1;
+                }
+            else if (n > 0)
+                {
+                    for(int i = n; i>0;i--)
+                    {
+                    factorial1=factorial1*i;
+                    }
+                }                         
+            else if (n < 0)
+                {
+                    System.out.println("No se permiten numeros negativos" + "\n");   
+                }
+            
+            System.out.println("Introduzca m:");
+            int m = sc.nextInt();
+            int factorial2 = 1;
+            if (m == 0)
+                {
+                    factorial2 = 1;
+                }
+            else if (m > 0)
+                {
+                    for (int j = m; j>0;j--)
+                    {
+                        factorial2=factorial2*j;
+                    }
+                }    
+            else if (m < 0)
+                {
+                    System.out.println("No se permiten numeros negativos" + "\n");   
+                }
+            
+            int nmenosm = (n-m);            
+            int factorial3 = 1;          
+            if(nmenosm == 0)
+                {
+                    factorial3 = 1;
+                }
+            else if (nmenosm < 0)
+                {
+                    System.out.println("m no puede ser mayor que n" + "\n");   
+                }
+            else if (nmenosm>0)
+                {
+                    for(int k = nmenosm; k>0;k--)
+                    {
+                    factorial3=factorial3*k;
+                    }
+                }
+            int resultado = factorial1/(factorial2*factorial3);
+            System.out.println("Las combinaciones de m elementos tomados de n en n estan basadas en la siguiente formula:");
+            System.out.println("(n/m) = " + n + "!" + "/" + m + "!" + "(" + n + "-" + m + "!)");  
+            System.out.println("Cuyo resultado es " + resultado);
+           
        }
 }
 
