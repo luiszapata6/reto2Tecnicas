@@ -9,13 +9,17 @@ public class ClasePrincipal {
        
        
        while(true){
-           
+        
+        
         System.out.println("\nSeleccione una opción: \n");
         System.out.println("1. Tablas de multiplicar.");
         System.out.println("2. Calcular cuadrados de los n primeros enteros.");
         System.out.println("3. Calcular cubos de los n primeros enteros.");
         System.out.println("4. Retirar dinero. ");
         System.out.println("5. Ecuación con factoriales.");
+        
+        
+        
            
         var x = input.nextInt();
         
@@ -72,16 +76,24 @@ public class ClasePrincipal {
        
        static void Punto2(){
            
+          
+           
            Scanner input = new Scanner(System.in);
            System.out.println("Punto 2:\n");
            System.out.println("¿De cuántos enteros desea calcular el cuadrado?");
-           var n = input.nextInt();
+           int n = input.nextInt();
+           calculoCuadrado(n);
+       }
+           
+           
+        static int calculoCuadrado(int numero2){
+           
+                
            int cuadrado = 0;
            int cont = 0;
-           int i;
-       
-           if(n >= 0){
-           for(i = 1; cont < n; i = i+2){
+           int i;         
+           if(numero2 >= 0){
+           for(i = 1; cont < numero2; i = i+2){
                 
                     cuadrado = cuadrado + i;
                     cont++;
@@ -90,20 +102,30 @@ public class ClasePrincipal {
            }} else{System.out.println("Por favor ingrese un entero positivo.");
            }
            System.out.println("\n");
+           return cuadrado;
           }
+
        
        static void Punto3(){
            
            Scanner sc = new Scanner(System.in);
-           int impar = -1;
            System.out.println("Punto 3:");
            System.out.println("Inserte el numero de cubos a calcular:");
            int x = sc.nextInt();
-            if (x > 0){
-        for (int i = 1; i <= x; i++) 
+           calculoCubo(x);
+       }
+           
+           
+       static int calculoCubo(int numero3){
+           
+           int impar = -1;
+           int suma = 0;
+           
+            if (numero3 > 0){
+        for (int i = 1; i <= numero3; i++) 
         {
             impar = impar + 2;
-            int suma = impar;
+            suma = impar;
             for (int j = 2; j <= i; j++) 
             {
                 impar = impar + 2;
@@ -114,10 +136,10 @@ public class ClasePrincipal {
         }
     else 
     {
-        System.out.println("Inserte un numero entero positivo.");
-    }
-           
+        System.out.println("Por favor inserte un numero entero positivo.");
+    }return suma;
        }
+           
        
        static void Punto4(){
        
