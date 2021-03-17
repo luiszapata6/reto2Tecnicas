@@ -146,8 +146,12 @@ public class ClasePrincipal {
            Scanner input = new Scanner(System.in);
            System.out.println("Punto 4:\n");
            System.out.println("¿Cuánto dinero desea retirar?");
-           
            var n = input.nextInt();
+           retiroCajero(n);
+       }
+           
+           static int retiroCajero(int n){
+           
            int cienmil = 0;
            int cincuenta = 0;
            int veinte = 0;
@@ -238,8 +242,9 @@ public class ClasePrincipal {
            }
            
            
+          return n;
+       } 
           
-       }
        
        static void Punto5(){
            
