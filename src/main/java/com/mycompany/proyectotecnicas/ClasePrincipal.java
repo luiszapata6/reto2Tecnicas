@@ -1,3 +1,9 @@
+/* Desarrollado por:
+   
+   Fernando José Buelvas Betancourt
+   Luis Fernando Zapata Ramírez
+*/
+
 package com.mycompany.proyectotecnicas;
 import java.util.Scanner;
 
