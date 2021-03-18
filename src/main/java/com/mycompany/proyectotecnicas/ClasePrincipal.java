@@ -5,7 +5,7 @@ public class ClasePrincipal {
   
     public static void main (String[] args) {
         
-       Scanner input = new Scanner(System.in);
+        Scanner input = new Scanner(System.in);
        
        
        while(true){
@@ -42,11 +42,12 @@ public class ClasePrincipal {
                default:
                    System.out.println("Por favor seleccione una opción válida.\n");
                    break;
-           }
-       
-}
+                   }
+                }       
     }
-       static void Punto1(){
+        
+      
+        static void Punto1(){
        
         Scanner lector = new Scanner (System.in);
         System.out.print("\nInserte el maximo numero a multiplicar:\n");
@@ -248,71 +249,46 @@ public class ClasePrincipal {
        
        static void Punto5(){
            
-           Scanner sc = new Scanner(System.in);
-            System.out.println("Realizar las combinaciones de M elementos tomados de N en N.");
-            System.out.println("Introduzca n: ");
+        Scanner input = new Scanner(System.in);
+        System.out.println("Realizar las combinaciones de M elementos tomados de N en N.");
+        System.out.println("Ingrese un número n: ");
+        double n = input.nextDouble();
+        System.out.println("Ingrese un número m:");
+        double m = input.nextInt();
+        double f1 = calculoFactorial(n);
+        double f2 = calculoFactorial(m);
+        double f3 = calculoFactorial(n-m);
+        double resultado = f1/(f2*f3);
+        System.out.println("Las combinaciones de m elementos tomados de n en n estan basadas en la siguiente formula:");
+        System.out.println("(n/m) = " + n + "!" + "/" + m + "!" + "(" + n + "-" + m + ")!\n");  
+        System.out.println("Cuyo resultado es " + resultado + "\n");
+       }
+           
             
-            int n = sc.nextInt();
-            int factorial1 = 1;
-            if(n == 0)
+        static double calculoFactorial(double n){
+            
+            double factorial = 1;
+        
+         if(n == 0)
                 {
-                    factorial1 = 1;
+                    factorial = 1;
                 }
             else if (n > 0)
                 {
-                    for(int i = n; i>0;i--)
+                    for(double i = n; i>0; i--)
                     {
-                    factorial1=factorial1*i;
+                    factorial = factorial*i;
                     }
                 }                         
             else if (n < 0)
                 {
                     System.out.println("No se permiten numeros negativos" + "\n");   
-                }
+                } 
+            return factorial;
             
-            System.out.println("Introduzca m:");
-            int m = sc.nextInt();
-            int factorial2 = 1;
-            if (m == 0)
-                {
-                    factorial2 = 1;
-                }
-            else if (m > 0)
-                {
-                    for (int j = m; j>0;j--)
-                    {
-                        factorial2=factorial2*j;
-                    }
-                }    
-            else if (m < 0)
-                {
-                    System.out.println("No se permiten numeros negativos" + "\n");   
-                }
-            
-            int nmenosm = (n-m);            
-            int factorial3 = 1;          
-            if(nmenosm == 0)
-                {
-                    factorial3 = 1;
-                }
-            else if (nmenosm < 0)
-                {
-                    System.out.println("m no puede ser mayor que n" + "\n");   
-                }
-            else if (nmenosm>0)
-                {
-                    for(int k = nmenosm; k>0;k--)
-                    {
-                    factorial3=factorial3*k;
-                    }
-                }
-            int resultado = factorial1/(factorial2*factorial3);
-            System.out.println("Las combinaciones de m elementos tomados de n en n estan basadas en la siguiente formula:");
-            System.out.println("(n/m) = " + n + "!" + "/" + m + "!" + "(" + n + "-" + m + "!)");  
-            System.out.println("Cuyo resultado es " + resultado);
            
        }
-}
+ }
 
 
 
