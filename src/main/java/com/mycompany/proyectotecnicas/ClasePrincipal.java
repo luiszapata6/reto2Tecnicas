@@ -58,7 +58,7 @@ public class ClasePrincipal {
         {        
         for (int sumador = 1; sumador <= n; sumador++)
         {
-            System.out.print("Tabla del " + sumador + " hasta el " + m + "\n");
+            System.out.print("Tabla del " + sumador + " hasta el: " + m + "\n");
             for (int multiplicador = 1; multiplicador <=m; multiplicador++)
             {
                 int X=multiplicador*sumador;
@@ -66,11 +66,11 @@ public class ClasePrincipal {
                 System.out.println("\n");
             }
         }
-        System.out.print("Exito\n");
+        System.out.print("Éxito.\n");
         }
         else 
         {
-            System.out.print("Ningún numero incresado debe ser negativo.");
+            System.out.print("Por favor ingrese un número positivo.");
         }       
        
        }
@@ -100,7 +100,7 @@ public class ClasePrincipal {
                     cont++;
                     System.out.println("El cuadrado de " + cont + " es = " + cuadrado + ".");
                       
-           }} else{System.out.println("Por favor ingrese un entero positivo.");
+           }} else{System.out.println("\nPor favor ingrese un entero positivo.");
            }
            System.out.println("\n");
            return cuadrado;
@@ -137,7 +137,7 @@ public class ClasePrincipal {
         }
     else 
     {
-        System.out.println("Por favor inserte un numero entero positivo.");
+        System.out.println("\nPor favor inserte un numero entero positivo.");
     }return suma;
        }
            
@@ -152,7 +152,9 @@ public class ClasePrincipal {
        }
            
            static int retiroCajero(int n){
-           
+               
+               
+           if(n>= 0){
            int cienmil = 0;
            int cincuenta = 0;
            int veinte = 0;
@@ -241,7 +243,7 @@ public class ClasePrincipal {
            } else if(cien > 1){
                 System.out.println(cien + " monedas de 100 pesos.");
            }
-           
+           }
            
           return n;
        } 
